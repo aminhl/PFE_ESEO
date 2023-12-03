@@ -93,20 +93,6 @@ class MainWindow(QMainWindow):
 
         self.show()
 
-        # SET CUSTOM THEME
-
-        useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
-
-        # SET THEME AND HACKS
-        if useCustomTheme:
-            # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
-
-            # SET HACKS
-            AppFunctions.setThemeHack(self)
-        # SET HOME PAGE AND SELECT MENU
-
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(
             UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
@@ -139,9 +125,6 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(
                 btn.styleSheet()))  # SELECT MENU
-
-        # if btnName == "btn_save":
-        #     print("Save BTN clicked!")
 
         if btnName == "pushButton":
             img_path = filedialog.askopenfilename()
