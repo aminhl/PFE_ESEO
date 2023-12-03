@@ -1,11 +1,7 @@
 from widgets import *
 from modules import *
-import cv2
-import pandas
 from tkinter import filedialog
-from PIL import Image
 import numpy as np
-from turtle import width
 import sys
 import os
 from PyQt6.QtCore import pyqtSignal
@@ -185,8 +181,6 @@ class MainWindow(QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
-
-    # Add the process_image function here
 
 
 def process_image(img_path, saving_path):
