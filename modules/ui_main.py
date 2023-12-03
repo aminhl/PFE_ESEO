@@ -1439,7 +1439,7 @@ class Ui_MainWindow(object):
         self.btn_home.setText(QCoreApplication.translate(
             "MainWindow", u"Home", None))
         self.btn_widgets.setText(QCoreApplication.translate(
-            "MainWindow", u"Image", None))
+            "MainWindow", u"Image Processing", None))
         self.btn_new.setText(QCoreApplication.translate(
             "MainWindow", u"New", None))
         self.btn_exit.setText(QCoreApplication.translate(
@@ -1490,9 +1490,9 @@ class Ui_MainWindow(object):
 # endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
         self.labelBoxBlenderInstalation.setText(
-            QCoreApplication.translate("MainWindow", u"FILE BOX", None))
+            QCoreApplication.translate("MainWindow", u"Import", None))
         self.labelVersion_3.setText(QCoreApplication.translate(
-            "MainWindow", u"Label description", None))
+            "MainWindow", u"Image For Treatement", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(
             QCoreApplication.translate("MainWindow", u"Type here", None))

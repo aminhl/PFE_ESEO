@@ -1,19 +1,3 @@
-# ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
-
 from widgets import *
 from modules import *
 import cv2
@@ -24,24 +8,32 @@ import numpy as np
 from turtle import width
 import sys
 import os
-import platform
-OPENSLIDE_PATH = "C:\\Users\\ProtocolBlood\\Desktop\\PFE_C\\UI\\Modern_GUI_PyDracula_PySide6_or_PyQt6\\openslide-win64-20221217\\bin"
-# import matplotlib.pyplot as plt
+from PyQt6.QtCore import pyqtSignal
+OPENSLIDE_PATH = os.getcwd() + "\\openslide-win64-20221217\\bin"
 
-# IMPORT / GUI AND MODULES AND WIDGETS
-# ///////////////////////////////////////////////////////////////
 # FIX Problem for High DPI and Scale above 100%
 os.environ["QT_FONT_DPI"] = "96"
 
 # SET AS GLOBAL WIDGETS
-# ///////////////////////////////////////////////////////////////
 widgets = None
+
+
+class WorkerThread(QThread):
+    finished = pyqtSignal()
+
+    def __init__(self, img_path, saving_path):
+        super().__init__()
+        self.img_path = img_path
+        self.saving_path = saving_path
+
+    def run(self):
+        process_image(self.img_path, self.saving_path)
+        self.finished.emit()
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
@@ -98,11 +90,11 @@ class MainWindow(QMainWindow):
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # SHOW APP
-        # ///////////////////////////////////////////////////////////////
+
         self.show()
 
         # SET CUSTOM THEME
-        # ///////////////////////////////////////////////////////////////
+
         useCustomTheme = False
         themeFile = "themes\py_dracula_light.qss"
 
@@ -113,16 +105,14 @@ class MainWindow(QMainWindow):
 
             # SET HACKS
             AppFunctions.setThemeHack(self)
-
         # SET HOME PAGE AND SELECT MENU
-        # ///////////////////////////////////////////////////////////////
+
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(
             UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
-    # ///////////////////////////////////////////////////////////////
 
     def buttonClick(self):
         # GET BUTTON CLICKED
@@ -157,22 +147,52 @@ class MainWindow(QMainWindow):
             img_path = filedialog.askopenfilename()
             saving_path = filedialog.askdirectory(
                 title="Sélection du dossier de sauvegarde")
-            widgets.lineEdit.setText("img_path")
-            print(img_path)
-            # process_image(img_path, saving_path)
+            widgets.lineEdit.setText(img_path)
+            dialog_stylesheet = """
+                QDialog {
+                    background-color: rgba(40, 44, 52, 1);
+                    border: 2px solid #555;
+                    color: #EEE;
+                    width: 400px;
+                    height: 200px;
+                }
 
-        # PRINT BTN NAME
-        # print(f'Button "{btnName}" pressed!')
+                QLabel {
+                    font-size: 14px;
+                    color: #EEE;
+                }
+            """
+            # Créez une instance de QDialog
+            dialog = QDialog()
+            dialog.setWindowTitle("Operation En Cours")
+            dialog.setStyleSheet(dialog_stylesheet)
+            dialog.setModal(True)
+            label = QLabel()
+            label.setText("Operation En Cours ...")
+            label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            layout = QVBoxLayout()
+            layout.addWidget(label)
+            dialog.setLayout(layout)
+            dialog.resize(400, 180)
+            opacity_effect = QGraphicsOpacityEffect(label)
+            label.setGraphicsEffect(opacity_effect)
+            animation = QPropertyAnimation(opacity_effect, b"opacity")
+            animation.setDuration(1700)
+            animation.setStartValue(0)
+            animation.setEndValue(1)
+            animation.setLoopCount(-1)
+            animation.start()
+            worker = WorkerThread(img_path, saving_path)
+            worker.finished.connect(dialog.accept)
+            worker.start()
+            result = dialog.exec()
 
     # RESIZE EVENTS
-    # ///////////////////////////////////////////////////////////////
-
     def resizeEvent(self, event):
         # Update Size Grips
         UIFunctions.resize_grips(self)
 
     # MOUSE CLICK EVENTS
-    # ///////////////////////////////////////////////////////////////
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPos()
@@ -188,7 +208,7 @@ class MainWindow(QMainWindow):
 
 def process_image(img_path, saving_path):
     # The content of the process_image function
-    OPENSLIDE_PATH = "C:\\Users\\ProtocolBlood\\Desktop\\PFE_C\\openslide-win64-20221217\\bin"
+    OPENSLIDE_PATH = os.getcwd() + "\\openslide-win64-20221217\\bin"
 
     if hasattr(os, 'add_dll_directory'):
         with os.add_dll_directory(OPENSLIDE_PATH):

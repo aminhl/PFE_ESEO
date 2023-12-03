@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>Wanderson M. Pimenta</author>
+ <author>Amin Hlel</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
@@ -1819,7 +1819,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -1909,42 +1909,6 @@ background-repeat: no-repeat;</string>
                               <number>0</number>
                              </property>
                              <item>
-                              <widget class="QFrame" name="frame_title_wid_1">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>35</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_18">
-                                <item>
-                                 <widget class="QLabel" name="labelBoxBlenderInstalation">
-                                  <property name="font">
-                                   <font>
-                                    <family>Segoe UI</family>
-                                    <pointsize>10</pointsize>
-                                    <italic>false</italic>
-                                    <bold>false</bold>
-                                   </font>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true"/>
-                                  </property>
-                                  <property name="text">
-                                   <string>FILE BOX</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item>
                               <widget class="QFrame" name="frame_content_wid_1">
                                <property name="frameShape">
                                 <enum>QFrame::NoFrame</enum>
@@ -1958,22 +1922,6 @@ background-repeat: no-repeat;</string>
                                   <property name="bottomMargin">
                                    <number>0</number>
                                   </property>
-                                  <item row="1" column="0" colspan="2">
-                                   <widget class="QLabel" name="labelVersion_3">
-                                    <property name="styleSheet">
-                                     <string notr="true">color: rgb(113, 126, 149);</string>
-                                    </property>
-                                    <property name="lineWidth">
-                                     <number>1</number>
-                                    </property>
-                                    <property name="text">
-                                     <string>Label description</string>
-                                    </property>
-                                    <property name="alignment">
-                                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                    </property>
-                                   </widget>
-                                  </item>
                                   <item row="0" column="0">
                                    <widget class="QLineEdit" name="lineEdit">
                                     <property name="minimumSize">
@@ -1990,6 +1938,22 @@ background-repeat: no-repeat;</string>
                                     </property>
                                     <property name="placeholderText">
                                      <string>Type here</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item row="1" column="0" colspan="2">
+                                   <widget class="QLabel" name="labelVersion_3">
+                                    <property name="styleSheet">
+                                     <string notr="true">color: rgb(113, 126, 149);</string>
+                                    </property>
+                                    <property name="lineWidth">
+                                     <number>1</number>
+                                    </property>
+                                    <property name="text">
+                                     <string>Image For Treatement</string>
+                                    </property>
+                                    <property name="alignment">
+                                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                                     </property>
                                    </widget>
                                   </item>
@@ -2030,6 +1994,42 @@ background-repeat: no-repeat;</string>
                               </widget>
                              </item>
                             </layout>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_title_wid_1">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_18">
+                          <item>
+                           <widget class="QLabel" name="labelBoxBlenderInstalation">
+                            <property name="font">
+                             <font>
+                              <family>Segoe UI</family>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2440,12 +2440,12 @@ background-repeat: no-repeat;</string>
                             </item>
                             <item row="0" column="2">
                              <property name="text">
-                              <string>Cell</string>
+                              <string>Clean</string>
                              </property>
                             </item>
                             <item row="0" column="3">
                              <property name="text">
-                              <string>Line</string>
+                              <string>Unusable</string>
                              </property>
                             </item>
                            </widget>
@@ -2459,6 +2459,12 @@ background-repeat: no-repeat;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <widget class="QLabel" name="label">
+                         <property name="styleSheet">
+                          <string notr="true">background: url(:/images/images/images/chu_dijon.svg) no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;</string>
+                         </property>
                          <property name="text">
                           <string>NEW PAGE TEST</string>
                          </property>
