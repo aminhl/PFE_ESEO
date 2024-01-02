@@ -10,7 +10,6 @@ GLOBAL_TITLE_BAR = True
 
 class UIFunctions(MainWindow):
     # MAXIMIZE/RESTORE
-    # ///////////////////////////////////////////////////////////////
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
@@ -41,18 +40,15 @@ class UIFunctions(MainWindow):
             self.bottom_grip.show()
 
     # RETURN STATUS
-    # ///////////////////////////////////////////////////////////////
     def returStatus(self):
         return GLOBAL_STATE
 
     # SET STATUS
-    # ///////////////////////////////////////////////////////////////
     def setStatus(self, status):
         global GLOBAL_STATE
         GLOBAL_STATE = status
 
     # TOGGLE MENU
-    # ///////////////////////////////////////////////////////////////
     def toggleMenu(self, enable):
         if enable:
             # GET WIDTH
@@ -76,7 +72,6 @@ class UIFunctions(MainWindow):
             self.animation.start()
 
     # TOGGLE LEFT BOX
-    # ///////////////////////////////////////////////////////////////
     def toggleLeftBox(self, enable):
         if enable:
             # GET WIDTH
@@ -106,7 +101,6 @@ class UIFunctions(MainWindow):
         UIFunctions.start_box_animation(self, width, widthRightBox, "left")
 
     # TOGGLE RIGHT BOX
-    # ///////////////////////////////////////////////////////////////
     def toggleRightBox(self, enable):
         if enable:
             # GET WIDTH
@@ -173,7 +167,6 @@ class UIFunctions(MainWindow):
         self.group.start()
 
     # SELECT/DESELECT MENU
-    # ///////////////////////////////////////////////////////////////
     # SELECT
     def selectMenu(getStyle):
         select = getStyle + Settings.MENU_SELECTED_STYLESHEET
@@ -197,14 +190,12 @@ class UIFunctions(MainWindow):
                 w.setStyleSheet(UIFunctions.deselectMenu(w.styleSheet()))
 
     # IMPORT THEMES FILES QSS/CSS
-    # ///////////////////////////////////////////////////////////////
     def theme(self, file, useCustomTheme):
         if useCustomTheme:
             str = open(file, 'r').read()
             self.ui.styleSheet.setStyleSheet(str)
 
     # START - GUI DEFINITIONS
-    # ///////////////////////////////////////////////////////////////
     def uiDefinitions(self):
         def dobleClickMaximizeRestore(event):
             # IF DOUBLE CLICK CHANGE STATUS
@@ -275,5 +266,4 @@ class UIFunctions(MainWindow):
             self.bottom_grip.setGeometry(
                 0, self.height() - 10, self.width(), 10)
 
-    # ///////////////////////////////////////////////////////////////
     # END - GUI DEFINITIONS
