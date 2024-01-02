@@ -938,7 +938,7 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-file.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-chart.png);</string>
                   </property>
                   <property name="text">
                    <string>New</string>
@@ -1819,7 +1819,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -1937,7 +1937,7 @@ background-repeat: no-repeat;</string>
                                      <string/>
                                     </property>
                                     <property name="placeholderText">
-                                     <string>Type here</string>
+                                     <string>Importez l'image ici</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -1994,42 +1994,6 @@ background-repeat: no-repeat;</string>
                               </widget>
                              </item>
                             </layout>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFrame" name="frame_title_wid_1">
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>35</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_18">
-                          <item>
-                           <widget class="QLabel" name="labelBoxBlenderInstalation">
-                            <property name="font">
-                             <font>
-                              <family>Segoe UI</family>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string/>
-                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2460,10 +2424,10 @@ background-repeat: no-repeat;</string>
                        <item>
                         <widget class="QLabel" name="label">
                          <property name="styleSheet">
-                          <string notr="true"/>
+                          <string notr="true">font-size: 18px</string>
                          </property>
                          <property name="text">
-                          <string>NEW PAGE TEST</string>
+                          <string>Statistiques</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>

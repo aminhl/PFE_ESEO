@@ -1,13 +1,9 @@
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-                            QMetaObject, QObject, QPoint, QRect,
-                            QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-                           QFont, QFontDatabase, QGradient, QIcon,
-                           QImage, QKeySequence, QLinearGradient, QPainter,
-                           QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QFrame,
-                               QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-                               QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect, QSize, Qt)
+from PySide6.QtGui import (QBrush, QColor, QCursor,
+                           QFont, QIcon, QPalette)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QFrame,
+                               QGridLayout, QHBoxLayout, QLabel,
+                               QLineEdit, QPushButton, QSizePolicy,
                                QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
                                QVBoxLayout, QWidget)
 from . import resources_rc
@@ -691,7 +687,7 @@ class Ui_MainWindow(object):
         self.btn_new.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_new.setLayoutDirection(Qt.LeftToRight)
         self.btn_new.setStyleSheet(
-            u"background-image: url(:/icons/images/icons/cil-file.png);")
+            u"background-image: url(:/icons/images/icons/cil-chart.png);")
 
         self.verticalLayout_8.addWidget(self.btn_new)
 
@@ -1107,23 +1103,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_1)
 
-        self.frame_title_wid_1 = QFrame(self.widgets)
-        self.frame_title_wid_1.setObjectName(u"frame_title_wid_1")
-        self.frame_title_wid_1.setMaximumSize(QSize(16777215, 35))
-        self.frame_title_wid_1.setFrameShape(QFrame.StyledPanel)
-        self.frame_title_wid_1.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_title_wid_1)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.labelBoxBlenderInstalation = QLabel(self.frame_title_wid_1)
-        self.labelBoxBlenderInstalation.setObjectName(
-            u"labelBoxBlenderInstalation")
-        self.labelBoxBlenderInstalation.setFont(font)
-        self.labelBoxBlenderInstalation.setStyleSheet(u"")
-
-        self.verticalLayout_18.addWidget(self.labelBoxBlenderInstalation)
-
-        self.verticalLayout.addWidget(self.frame_title_wid_1)
-
         self.row_3 = QFrame(self.widgets)
         self.row_3.setObjectName(u"row_3")
         self.row_3.setMinimumSize(QSize(0, 150))
@@ -1267,7 +1246,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label = QLabel(self.new_page)
         self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"")
+        self.label.setStyleSheet(u"font-size: 18px")
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_20.addWidget(self.label)
@@ -1413,7 +1392,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1430,9 +1409,9 @@ class Ui_MainWindow(object):
         self.btn_home.setText(QCoreApplication.translate(
             "MainWindow", u"Home", None))
         self.btn_widgets.setText(QCoreApplication.translate(
-            "MainWindow", u"Image Treatement", None))
+            "MainWindow", u"Widgets", None))
         self.btn_new.setText(QCoreApplication.translate(
-            "MainWindow", u"Stats", None))
+            "MainWindow", u"New", None))
         self.btn_exit.setText(QCoreApplication.translate(
             "MainWindow", u"Exit", None))
         self.toggleLeftBox.setText(
@@ -1482,12 +1461,11 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setText("")
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(
-            QCoreApplication.translate("MainWindow", u"Type here", None))
+            QCoreApplication.translate("MainWindow", u"Importez l'image ici", None))
         self.labelVersion_3.setText(QCoreApplication.translate(
-            "MainWindow", u"Image For Treatement", None))
+            "MainWindow", u"Traitements Recents", None))
         self.pushButton.setText(
             QCoreApplication.translate("MainWindow", u"Open", None))
-        self.labelBoxBlenderInstalation.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(
             QCoreApplication.translate("MainWindow", u"0", None))
@@ -1566,7 +1544,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.label.setText(QCoreApplication.translate(
-            "MainWindow", u"NEW PAGE TEST", None))
+            "MainWindow", u"Statistiques", None))
         self.btn_message.setText(QCoreApplication.translate(
             "MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate(
