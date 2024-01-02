@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-# Form generated from reading UI file 'mainduCMSf.ui'
-##
-# Created by: Qt User Interface Compiler version 6.4.3
-##
-# WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
                             QMetaObject, QObject, QPoint, QRect,
                             QSize, QTime, QUrl, Qt)
@@ -1042,7 +1032,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         self.home = QWidget()
         self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"background-image: url(:/images/images/images/Logo_Eseo.png);\n"
+        self.home.setStyleSheet(u"background-image: url(:/images/images/images/ESEO_CHU.png);\n"
                                 "background-position: center;\n"
                                 "background-repeat: no-repeat;")
         self.stackedWidget.addWidget(self.home)
@@ -1071,23 +1061,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_17.setSpacing(0)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.frame_title_wid_1 = QFrame(self.frame_div_content_1)
-        self.frame_title_wid_1.setObjectName(u"frame_title_wid_1")
-        self.frame_title_wid_1.setMaximumSize(QSize(16777215, 35))
-        self.frame_title_wid_1.setFrameShape(QFrame.StyledPanel)
-        self.frame_title_wid_1.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_title_wid_1)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.labelBoxBlenderInstalation = QLabel(self.frame_title_wid_1)
-        self.labelBoxBlenderInstalation.setObjectName(
-            u"labelBoxBlenderInstalation")
-        self.labelBoxBlenderInstalation.setFont(font)
-        self.labelBoxBlenderInstalation.setStyleSheet(u"")
-
-        self.verticalLayout_18.addWidget(self.labelBoxBlenderInstalation)
-
-        self.verticalLayout_17.addWidget(self.frame_title_wid_1)
-
         self.frame_content_wid_1 = QFrame(self.frame_div_content_1)
         self.frame_content_wid_1.setObjectName(u"frame_content_wid_1")
         self.frame_content_wid_1.setFrameShape(QFrame.NoFrame)
@@ -1097,6 +1070,13 @@ class Ui_MainWindow(object):
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(-1, -1, -1, 0)
+        self.lineEdit = QLineEdit(self.frame_content_wid_1)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setMinimumSize(QSize(0, 30))
+        self.lineEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
+
         self.labelVersion_3 = QLabel(self.frame_content_wid_1)
         self.labelVersion_3.setObjectName(u"labelVersion_3")
         self.labelVersion_3.setStyleSheet(u"color: rgb(113, 126, 149);")
@@ -1105,13 +1085,6 @@ class Ui_MainWindow(object):
             Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
 
         self.gridLayout.addWidget(self.labelVersion_3, 1, 0, 1, 2)
-
-        self.lineEdit = QLineEdit(self.frame_content_wid_1)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setMinimumSize(QSize(0, 30))
-        self.lineEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-
-        self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
 
         self.pushButton = QPushButton(self.frame_content_wid_1)
         self.pushButton.setObjectName(u"pushButton")
@@ -1133,6 +1106,23 @@ class Ui_MainWindow(object):
         self.verticalLayout_16.addWidget(self.frame_div_content_1)
 
         self.verticalLayout.addWidget(self.row_1)
+
+        self.frame_title_wid_1 = QFrame(self.widgets)
+        self.frame_title_wid_1.setObjectName(u"frame_title_wid_1")
+        self.frame_title_wid_1.setMaximumSize(QSize(16777215, 35))
+        self.frame_title_wid_1.setFrameShape(QFrame.StyledPanel)
+        self.frame_title_wid_1.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_title_wid_1)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.labelBoxBlenderInstalation = QLabel(self.frame_title_wid_1)
+        self.labelBoxBlenderInstalation.setObjectName(
+            u"labelBoxBlenderInstalation")
+        self.labelBoxBlenderInstalation.setFont(font)
+        self.labelBoxBlenderInstalation.setStyleSheet(u"")
+
+        self.verticalLayout_18.addWidget(self.labelBoxBlenderInstalation)
+
+        self.verticalLayout.addWidget(self.frame_title_wid_1)
 
         self.row_3 = QFrame(self.widgets)
         self.row_3.setObjectName(u"row_3")
@@ -1277,6 +1267,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label = QLabel(self.new_page)
         self.label.setObjectName(u"label")
+        self.label.setStyleSheet(u"")
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_20.addWidget(self.label)
@@ -1422,7 +1413,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1439,9 +1430,9 @@ class Ui_MainWindow(object):
         self.btn_home.setText(QCoreApplication.translate(
             "MainWindow", u"Home", None))
         self.btn_widgets.setText(QCoreApplication.translate(
-            "MainWindow", u"Image Processing", None))
+            "MainWindow", u"Image Treatement", None))
         self.btn_new.setText(QCoreApplication.translate(
-            "MainWindow", u"New", None))
+            "MainWindow", u"Stats", None))
         self.btn_exit.setText(QCoreApplication.translate(
             "MainWindow", u"Exit", None))
         self.toggleLeftBox.setText(
@@ -1489,15 +1480,14 @@ class Ui_MainWindow(object):
             QCoreApplication.translate("MainWindow", u"Close", None))
 # endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.labelBoxBlenderInstalation.setText(
-            QCoreApplication.translate("MainWindow", u"Import", None))
-        self.labelVersion_3.setText(QCoreApplication.translate(
-            "MainWindow", u"Image For Treatement", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(
             QCoreApplication.translate("MainWindow", u"Type here", None))
+        self.labelVersion_3.setText(QCoreApplication.translate(
+            "MainWindow", u"Image For Treatement", None))
         self.pushButton.setText(
             QCoreApplication.translate("MainWindow", u"Open", None))
+        self.labelBoxBlenderInstalation.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(
             QCoreApplication.translate("MainWindow", u"0", None))
@@ -1569,10 +1559,10 @@ class Ui_MainWindow(object):
             QCoreApplication.translate("MainWindow", u"Date", None))
         ___qtablewidgetitem22 = self.tableWidget.item(0, 2)
         ___qtablewidgetitem22.setText(
-            QCoreApplication.translate("MainWindow", u"Cell", None))
+            QCoreApplication.translate("MainWindow", u"Clean", None))
         ___qtablewidgetitem23 = self.tableWidget.item(0, 3)
         ___qtablewidgetitem23.setText(
-            QCoreApplication.translate("MainWindow", u"Line", None))
+            QCoreApplication.translate("MainWindow", u"Unusable", None))
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.label.setText(QCoreApplication.translate(

@@ -4,7 +4,8 @@
     <file>images/images/PyDracula_vertical.png</file>
     <file>images/images/Logo_Eseo.png</file>
     <file>images/images/Eseo_win.png</file>
-    <file>images/images/chu_dijon.svg</file>
+    <file>images/images/Chu_Dijon.png</file>
+    <file>images/images/ESEO_CHU.png</file>
   </qresource>
   <qresource prefix="icons">
     <file>images/icons/cil-3d.png</file>

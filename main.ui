@@ -1819,11 +1819,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/Logo_Eseo.png);
+                       <string notr="true">background-image: url(:/images/images/images/ESEO_CHU.png);
 background-position: center;
 background-repeat: no-repeat;</string>
                       </property>
@@ -2460,10 +2460,7 @@ background-repeat: no-repeat;</string>
                        <item>
                         <widget class="QLabel" name="label">
                          <property name="styleSheet">
-                          <string notr="true">background: url(:/images/images/images/chu_dijon.svg) no-repeat;
-display: flex;
-justify-content: center;
-align-items: center;</string>
+                          <string notr="true"/>
                          </property>
                          <property name="text">
                           <string>NEW PAGE TEST</string>

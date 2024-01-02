@@ -1,0 +1,11 @@
+cx_Freeze==6.15.9
+cx_Freeze==6.15.12
+matplotlib==3.8.2
+numpy==1.26.2
+Pillow==9.4.0
+Pillow==10.2.0
+PyQt6==6.6.1
+PyQt6_sip==13.6.0
+PySide6==6.6.1
+PySide6_Addons==6.6.1
+PySide6_Essentials==6.6.1
