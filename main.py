@@ -1,7 +1,4 @@
-
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
-
+from charts import Charts
 from widgets import *
 from modules import *
 from tkinter import filedialog
@@ -9,6 +6,8 @@ import numpy as np
 import sys
 import os
 from worker_thread import WorkerThread
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
 
 # FIX Problem for High DPI and Scale above 100%
 os.environ["QT_FONT_DPI"] = "96"
@@ -99,32 +98,14 @@ class MainWindow(QMainWindow):
 
         # SHOW NEW PAGE
         if btnName == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page)
+            app_widget = Charts()
+            if widgets.stackedWidget.indexOf(app_widget) == -1:
+                widgets.stackedWidget.addWidget(app_widget)
+
+            widgets.stackedWidget.setCurrentWidget(app_widget)
+
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-
-            if not self.charts_added:
-
-                x1 = [1, 2, 8, 3, 6]
-                y1 = [9, 3, 1, 6, 3]
-                labels = ['Category 1', 'Category 2']
-                sizes = [15, 30]
-                fig = Figure()
-                fig.set_facecolor('#c9c5c5')
-                ax1 = fig.add_subplot(121)
-                ax1.plot(x1, y1)
-                ax1.set_title('Line Chart')
-                ax1.set_xlabel('X-axis')
-                ax1.set_ylabel('Y-axis')
-                ax2 = fig.add_subplot(122)
-                ax2.pie(sizes, labels=labels, autopct='%1.1f%%',
-                        startangle=90, wedgeprops=dict(width=0.4))
-                ax2.set_title('Donut Chart')
-                canvas = FigureCanvas(fig)
-                layout = widgets.new_page.layout()
-                layout.addWidget(canvas)
-                layout.update()
-                self.charts_added = True
 
         if btnName == "pushButton":
             img_path = filedialog.askopenfilename()
